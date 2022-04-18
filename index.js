@@ -3,10 +3,13 @@ const ctx = canvas.getContext('2d');
 
 ctx.fillStyle = '#0ff';
 
-const circle = document.getElementById('circle');
 function getRandomColor() {
-    return '#f0f';
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return '#' + randomColor;
 }
+
+const circle = document.getElementById('circle');
+
 function addCircle() {
     ctx.fillStyle = getRandomColor();
     ctx.beginPath();
