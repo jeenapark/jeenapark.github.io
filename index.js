@@ -8,6 +8,16 @@ function getRandomColor() {
     return '#' + randomColor;
 }
 
+function getRandomPosition(minX, maxX, minY, maxY) {
+    minX = Math.ceil(minX);
+    maxX = Math.floor(maxX);
+    minY = Math.ceil(minY);
+    maxY = Math.floor(maxY);
+    const randX = Math.floor(Math.random() * (maxX - minX) + minX);
+    const randY = Math.floor(Math.random() * (maxY - minY) + minY);
+    return [randX, randY];
+}
+
 const circle = document.getElementById('circle');
 
 function addCircle() {
@@ -27,10 +37,12 @@ circle.addEventListener('click', addCircle);
 
 const square = document.getElementById('square');
 
-function addSquare() {
+function addSquare(x, y) {
     ctx.fillStyle = getRandomColor();
-    ctx.fillRect(10, 10, 25, 25);
+    const randomPosition = getRandomPosition(0, 1425, 0, 590);
+    ctx.fillRect(randomPosition[0], randomPosition[1], 25, 25);
 }
+
 square.addEventListener('click', addSquare);
 
 const triangle = document.querySelector('.triangleplus');
