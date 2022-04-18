@@ -21,16 +21,19 @@ function getRandomPosition(minX, maxX, minY, maxY) {
 const circle = document.getElementById('circle');
 
 function addCircle() {
+    const randomPosition = getRandomPosition(0, 1425, 0, 590);
+    const xOffset = randomPosition[0];
+    const yOffset = randomPosition[1];
     ctx.fillStyle = getRandomColor();
     ctx.beginPath();
-    ctx.arc(75, 75, 30, 0, Math.PI * 2, true); // Outer circle
+    ctx.arc(15 + xOffset, 15 + yOffset, 30, 0, Math.PI * 2, true); // Outer circle
     ctx.fill()
-    ctx.moveTo(95, 75);
-    ctx.arc(75, 75, 20, 0, Math.PI, false);  // Mouth (clockwise)
-    ctx.moveTo(65, 65);
-    ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
-    ctx.moveTo(95, 65);
-    ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
+    ctx.moveTo(35 + xOffset, 15 + yOffset);
+    ctx.arc(15 + xOffset, 15 + yOffset, 20, 0, Math.PI, false);  // Mouth (clockwise)
+    ctx.moveTo(5 + xOffset, 5 + yOffset);
+    ctx.arc(0 + xOffset, 5 + yOffset, 5, 0, Math.PI * 2, true);  // Left eye
+    ctx.moveTo(35 + xOffset, 5 + yOffset);
+    ctx.arc(30 + xOffset, 5 + yOffset, 5, 0, Math.PI * 2, true);  // Right eye
     ctx.stroke();
 }
 circle.addEventListener('click', addCircle);
@@ -48,12 +51,14 @@ square.addEventListener('click', addSquare);
 const triangle = document.querySelector('.triangleplus');
 
 function addTriangle() {
+    const randomPosition = getRandomPosition(0, 1425, 0, 590);
+    const xOffset = randomPosition[0];
+    const yOffset = randomPosition[1];
     ctx.fillStyle = getRandomColor();
     ctx.beginPath();
-    ctx.moveTo(50, 20);
-    ctx.lineTo(30, 55);
-    ctx.lineTo(70, 55);
+    ctx.moveTo(30 + xOffset, 15 + yOffset);
+    ctx.lineTo(10 + xOffset, 55 + yOffset);
+    ctx.lineTo(50 + xOffset, 55 + yOffset);
     ctx.fill();
-    console.log('hi');
 }
 triangle.addEventListener('click', addTriangle);
