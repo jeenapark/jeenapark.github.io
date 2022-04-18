@@ -29,3 +29,16 @@ function addSquare() {
     ctx.fillRect(10, 10, 25, 25);
 }
 square.addEventListener('click', addSquare);
+
+const triangle = document.querySelector('.triangleplus');
+
+function addTriangle() {
+    ctx.fillStyle = getRandomColor();
+    ctx.beginPath();
+    ctx.moveTo(50, 20);
+    ctx.lineTo(30, 55);
+    ctx.lineTo(70, 55);
+    ctx.fill();
+    console.log('hi');
+}
+triangle.addEventListener('click', addTriangle);
