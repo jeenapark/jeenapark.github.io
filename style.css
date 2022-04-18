@@ -1,0 +1,23 @@
+body {
+    background-color: lavender;
+}
+.button {
+    font-size: 24px;
+    font-style: bold;
+}
+.circle {
+    border-radius: 50%;
+    border: none;
+    padding: 4px 8px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: magenta;
+}
+.square {
+    padding: 4px 8px;
+    border: none;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #00ffff;
+}
+    
