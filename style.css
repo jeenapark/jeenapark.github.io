@@ -37,4 +37,16 @@ canvas {
     font-size: 24px;
     font-style: bold;
 }
-    
+
+#blog-post-one-content {
+    margin: auto 30%;
+}
+
+#blog-post-one {
+    color: black;
+    background-color: pink;
+    font-style: bold;
+    border-radius: 50%;
+    font-size: 15px;
+    padding: 4px 8px;
+}

@@ -62,3 +62,12 @@ function addTriangle() {
     ctx.fill();
 }
 triangle.addEventListener('click', addTriangle);
+
+const blogPostOneButton = document.querySelector("#blog-post-one");
+const blogPostOneContent = document.querySelector("#blog-post-one-content");
+
+blogPostOneButton.addEventListener("click", () => {
+    blogPostOneButton.style.display = "none";
+    blogPostOneContent.style.display = "block";
+
+})

@@ -6,6 +6,149 @@
     </head>
     <body>
         <h1>jeenaland</h1>
+        <div id="blog-post-container">
+            <div id="blog-post-one-content" style="display: none">
+                <p>Dear Reader,</p>
+                <p>
+                    How often have you had an array of strings and wished 
+                    you could capitalize each word? If you answered “all the time”, 
+                    then you came to the right place. 
+                    Today we're going to iterate on an array so that every word in the array is capitalized.
+                </p>
+                <p>
+                    Some questions to ask yourself before you begin. What's in the array? Is it a string? 
+                    It better be. Within that string, you probably have multiple words separated by spaces. 
+                    Uh-oh. Is that another string after that? 
+                    How are you going to capitalize not only all of the words in the first string, but the one after that? 
+                    Not to fear, Jeena is here.  
+                </p>
+                <p>
+                    Let's take it step by step. Take a look at the array. 
+                </p>
+                <pre>
+        const tutorials = [
+        "what does the this keyword mean?",
+        "What is the Constructor OO pattern?",
+        "implementing Blockchain Web API",
+        "The Test driven Development Workflow",
+        ];
+                </pre>
+                <p>
+                    We want every string in the array to be titlecased, meaning every word should be capitalized. 
+                    Your result should look like this.
+                </p>
+                <pre>
+        const tutorials = [
+        "What Does The This Keyword Mean?",
+        "What Is The Constructor OO Pattern?",
+        "Implementing Blockchain Web API",
+        "The Test Driven Development Workflow"
+        ];
+                </pre>
+                <p>
+                    First, how can we iterate through the individual words in each string? 
+                    If you thought to yourself “.split”, then have an extra oreo tonight. 
+                    How does .split work? .split is a JavaScript method on String that takes a string to separate by, called a delimiter. 
+                    Then it returns an array of the separate parts of the string. 
+                    If you have a string containing words, those words are going to be separated by spaces.  
+                    So if you want to get an array of the words within a string, you can call on .split with a space as the argument and this will return an array of the words. 
+                </p>
+                <pre>
+    "What Does The This Keyword Mean?".split(“ ”);
+
+    Returns [“What”, “Does”, “The”, “This”, “Keyword”, “Mean?”];                    
+                </pre>
+                <p>
+                    Okay, but Jeena, how do I do this if I have more than one string in my array? 
+                    Great question! There's something we can do to iterate on an array that returns a modified one. 
+                    Take a guess. Did you say “.map”? Woohoo, have another oreo! .map is another JavaScript method that operates on an array and returns an equal length array that contains a modified version of each element of the original array. What do you mean “a modified version of each element”? How does it modify it? .map takes a callback function and executes it on each element in an array. 
+                </p>
+                <pre>
+        const tutorials = [
+        "what does the this keyword mean?",
+        "What is the Constructor OO pattern?",
+        "implementing Blockchain Web API",
+        "The Test driven Development Workflow",
+        ];
+
+        tutorials.map(string => string.split(“ ”))
+
+        Returns [
+        ["what”, “does”, “the”, “this”, “keyword”, “mean?"],
+        ["What”, “is”, “the”, “Constructor”, “OO”, “pattern?"],
+        ["implementing”, “Blockchain”, “Web”, “API"],
+        ["The”, “Test”, “driven”, “Development”, “Workflow"],
+        ];
+                </pre>
+                <p>
+                    Err now what? How can we capitalize every word? First we want to grab the first letter in each word 
+                    using .charAt(0) and call .toUpperCase() in order to capitalize each word. But what about the rest 
+                    of the letters? We can use another String method called “.slice”. .slice takes in an index as its parameter 
+                    and returns a string of the letters from the indicated index onwards. From here, we can concatenate in 
+                    order to rebuild a capitalized word. 
+                </p>
+                <pre>
+    “javascript”.charAt(0).toUpperCase() + “javascript”.slice(1);
+
+    Returns “Javascript”;
+                </pre>
+                <p>
+                    Great Jeena, but there are more words. What do with them? Well, it looks like each word is an element 
+                    in an array within an array. How can we iterate on each element of an array and return a modified version? 
+                    That's right, our old friend .map. Since .map takes in a callback function, we can create a function that 
+                    capitalizes each word and use that on each of our strings.
+                </p>
+                <p>
+                    Putting things together now, let's start with our first array of strings. We know how to split each string 
+                    into words in a new array. With that new array, we can capitalize each word within it. 
+                    Let's see what this looks like in code. 
+                </p>
+                <pre>
+arrayOfSentences.map((sentence) => sentence.split(“ ”))
+    .map((arrayOfWords) => arrayOfWords
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1));
+
+Returns [
+["What Does The This Keyword Mean?"],
+["What Is The Constructor OO Pattern?"],
+["Implementing Blockchain Web API"],
+["The Test Driven Development Workflow"]
+];
+                </pre>
+                <p>
+                    This is almost what we want, but it returns an array of arrays. What now? 
+                    We can use .join() to join all of the strings in an array into one string.
+                    Note that it returns a string, not an array. 
+                    So if we add that on, now our code looks like this. 
+                </p>
+                <pre>
+arrayOfSentences.map((sentence) => sentence.split(“ ”))
+    .map((arrayOfWords) => arrayOfWords
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((arrayOfWords) => arrayOfWords.join());
+
+Returns [
+"What Does The This Keyword Mean?",
+"What Is The Constructor OO Pattern?",
+"Implementing Blockchain Web API",
+"The Test Driven Development Workflow"
+];
+                </pre>
+                <p>
+                    Now that we have our final code, let's walk through the steps that it took to get here. 
+                    We started with an array of strings and we wanted to capitalize each word within each string. 
+                    So, we started by using .split() to split each string into individual words. 
+                    We then used .map() to execute .split() on each string within our original array. 
+                    We were returned a new array, within the original array, full of the strings that 
+                    represented the individual words. Then, we used another .map() on that array of arrays to 
+                    capitalize the first letter in each word and return it. So now we have an array of arrays. 
+                    The inner arrays now contain the words that are capitalized. Finally we use .join() to join 
+                    all of the words in each inner array so that they all contain one string. And voila! 
+                    We have an array of strings with each word capitalized. 
+                </p>
+            </div>
+        </div>
+        <button id="blog-post-one" style="display: block">blog post 1</button>
         <canvas id="canvas" height="590px" width="1425px"></canvas>  
         <button id="circle" class="circle button" type="button" title="add circles">+</button>
         <button id="square" class="square button" type="button" title="add squares">+</button>
