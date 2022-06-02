@@ -2,7 +2,7 @@ body {
     background-color: lavender;
 }
 canvas {
-    height: 590px;
+    height: 400px;
     width: 1425px;
 }
 .button {
@@ -38,11 +38,11 @@ canvas {
     font-style: bold;
 }
 
-#blog-post-one-content {
+.blog-post-content {
     margin: auto 30%;
 }
 
-#blog-post-one {
+.blog-post-button {
     color: black;
     background-color: pink;
     font-style: bold;

@@ -7,7 +7,7 @@
     <body>
         <h1>jeenaland</h1>
         <div id="blog-post-container">
-            <div id="blog-post-one-content" style="display: none">
+            <div id="blog-post-one-content" class="blog-post-content" style="display: none">
                 <p>Dear Reader,</p>
                 <p>
                     How often have you had an array of strings and wished 
@@ -147,8 +147,17 @@ Returns [
                     We have an array of strings with each word capitalized. 
                 </p>
             </div>
+            <div id="blog-post-two-content" class="blog-post-content" style="display: none">
+                <p>Dear Reader,</p>
+                <p>What's more important than getting the right answer? Knowing how you got there. Programming is unique in that there is no single right answer to a problem, but a myriad of ways to solve a problem. You need to come to a solution eventually so how do you get there? By asking the right questions. Why is this value undefined? Why isn't my onChange event listener firing? Why why why? For every "why" there's an answer.</p>
+                <p>It takes time, patience, and an open-mind to unravel the mystery that lies within the code. When I encounter a problem within my code I like to start with a hypothesis. Where does the problem begin? Start by identifying a symptom. What am I seeing vs. what did I expect to see? Then I do some research on the symptom. Luckily, engineers love to share and solve their problems on the internet. And guess what? Someone has probably had the same issue. Then I come up with an experiment. What can I change or print out that will verify or validate my hypothesis? Damn, still broken? Repeat. The best thing about programming is that I can iterate over and over again until it works.</p>
+                <p>Here are a few traps you can fall into while problem solving and a few lessons I have learned so far. Don't start with a bad attitude. You have to be patient and willing to try anything and everything. Sometimes the thing you don't expect to work, works. And that's life. There is no one right answer. Don't fall in love with your broken code, sometimes it makes sense to just start over and try a new approach. As you grow more impatient and frustrated, be careful  misinterpret your experiment's results.</p>
+                <p>And always remember, someone else has to read your code. Even if that's your future self.</p>
+            </div>
         </div>
-        <button id="blog-post-one" style="display: block">blog post 1</button>
+        <button id="blog-post-one" class="blog-post-button" style="display: block">blog post 1</button>
+        <br>
+        <button id="blog-post-two" class="blog-post-button" style="display: block">blog post 2</button>
         <canvas id="canvas" height="590px" width="1425px"></canvas>  
         <button id="circle" class="circle button" type="button" title="add circles">+</button>
         <button id="square" class="square button" type="button" title="add squares">+</button>

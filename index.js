@@ -69,5 +69,15 @@ const blogPostOneContent = document.querySelector("#blog-post-one-content");
 blogPostOneButton.addEventListener("click", () => {
     blogPostOneButton.style.display = "none";
     blogPostOneContent.style.display = "block";
+    blogPostTwoButton.style.display = "none";
 
 })
+
+const blogPostTwoButton = document.querySelector("#blog-post-two");
+const blogPostTwoContent = document.querySelector("#blog-post-two-content");
+
+blogPostTwoButton.addEventListener("click", () => {
+    blogPostOneButton.style.display = "none";
+    blogPostTwoButton.style.display = "none";
+    blogPostTwoContent.style.display = "block";
+}) 
